@@ -5,7 +5,9 @@ html{
 }
 
 header{
-    justify-self: center;
+    text-align: center;
+    justify-content: center;
+    display: flex;
 }
 
 body {

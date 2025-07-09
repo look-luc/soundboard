@@ -14,27 +14,42 @@
                 </h1>
             </header>
         </div>
+        <script>
+            function playMP3(filePath) {
+                const audioPlayer = document.getElementById('audioPlayer');
+                audioPlayer.src = filePath;
+                audioPlayer.play();
+  }
+        </script>
+
         <main>
             <div class="button-container">
-                <button class="arcade-button">Click Me!</button>
-                <button class="arcade-button">Click Me!</button>
-                <button class="arcade-button">Click Me!</button>
-                <button class="arcade-button">Click Me!</button>
-                <button class="arcade-button">Click Me!</button>
-                <button class="arcade-button">Click Me!</button>
-                <button class="arcade-button">Click Me!</button>
-                <button class="arcade-button">Click Me!</button>
-                <button class="arcade-button">Click Me!</button>
-                <button class="arcade-button">Click Me!</button>
-                <button class="arcade-button">Click Me!</button>
-                <button class="arcade-button">Click Me!</button>
-                <button class="arcade-button">Click Me!</button>
-                <button class="arcade-button">Click Me!</button>
-                <button class="arcade-button">Click Me!</button>
-                <button class="arcade-button">Click Me!</button>
-                <button class="arcade-button">Click Me!</button>
-                <button class="arcade-button">Click Me!</button>
-                <button class="arcade-button">Click Me!</button>
+                <audio id="audioPlayer" controls style="display: none;"></audio>
+
+                <button 
+                    class="arcade-button" 
+                    onclick="playMP3('./sounds/Shlime.mp3')"
+                >Shlime
+                </button>
+                <button class="arcade-button" onclick="playMP3('./sounds/Girlypop.mp3')">Yas Girlypop</button>
+                <button class="arcade-button" onclick="playMP3('./sounds/Issue.mp3')">Issue Ish-me</button>
+                <button class="arcade-button" onclick="playMP3('./sounds/yur.mp3')">Yur</button>
+                <button class="arcade-button" onclick="playMP3('./sounds/My_guy.mp3')">My Guy</button>
+                <button class="arcade-button" onclick="playMP3('./sounds/hey.mp3')">Hey 🥺👉👈</button>
+                <button class="arcade-button" onclick="playMP3('./sounds/ceiling.mp3')">The ceiling</button>
+                <button class="arcade-button" onclick="playMP3('./sounds/Brother.mp3')">Brother!</button>
+                <button class="arcade-button" onclick="playMP3('./sounds/Matcha.mp3')">Matcha</button>
+                <button class="arcade-button" onclick="playMP3('./sounds/Prosper.mp3')">Prosper</button>
+                <button class="arcade-button" onclick="playMP3('./sounds/erm.mp3')">Erm</button>
+                <button class="arcade-button" onclick="playMP3('./sounds/not_peer_lead.mp3')">Peer Lead</button>
+                <button class="arcade-button" onclick="playMP3('./sounds/fav_peer_lead.mp3')">Fav Lead</button>
+                <button class="arcade-button" onclick="playMP3('./sounds/dude!.mp3')">Dude What?!</button>
+                <button class="arcade-button" onclick="playMP3('./sounds/chickpea.mp3')">ChickPea</button>
+                <button class="arcade-button" onclick="playMP3('./sounds/sigma_boi.mp3')">Sigma</button>
+                <button class="arcade-button" onclick="playMP3('./sounds/cecil_county.mp3')">Cecil County</button>
+                <button class="arcade-button" onclick="playMP3('./sounds/spa.mp3')">Goose Spa</button>
+                <button class="arcade-button" onclick="playMP3('./sounds/bruh.mp3')">Bruh</button>
+                <button class="arcade-button" onclick="playMP3('./sounds/hate.mp3')">You hate us</button>
             </div>
         </main>
     </body>
