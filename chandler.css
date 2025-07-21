@@ -1,46 +1,46 @@
 html{
-  align-items: center;
-  justify-content: center;
-  display: flex;
+    align-items: center;
+    justify-content: center;
+    display: flex;
 }
 
 .navigation_bar {
-  display: inline-block;
-  position: absolute;
-  top: 10px;
-  right: 10px;
-  padding: 5px 5px;
-  justify-content: right;
-  gap: 5px;
-  background-color:antiquewhite;
-  border: none;
-  color: white;
-  text-align: center;
-  text-decoration: none;
-  font-size: 16px;
-  transition-duration: 0.5s;
-  border-radius: 4px;
+    display: inline-block;
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    padding: 5px 5px;
+    justify-content: right;
+    gap: 5px;
+    background-color:antiquewhite;
+    border: none;
+    color: white;
+    text-align: center;
+    text-decoration: none;
+    font-size: 16px;
+    transition-duration: 0.5s;
+    border-radius: 4px;
 }
 
 .navigation_bar:hover {
-  box-shadow: 0 12px 16px 0 rgba(0,0,0,0.24), 0 17px 50px 0 rgba(0,0,0,0.19);
+    box-shadow: 0 12px 16px 0 rgba(0,0,0,0.24), 0 17px 50px 0 rgba(0,0,0,0.19);
 }
 
 header{
-  text-align: center;
-  justify-content: center;
-  display: flex;
+    text-align: center;
+    justify-content: center;
+    display: flex;
 }
 
 body {
-  display: flex;
-  flex-direction: column; /* Stacks children vertically */
-  min-height: 100vh;      /* Ensures the body takes at least the full viewport height */
-  margin: 0;              /* Remove default body margin */
+    display: flex;
+    flex-direction: column; /* Stacks children vertically */
+    min-height: 100vh;      /* Ensures the body takes at least the full viewport height */
+    margin: 0;              /* Remove default body margin */
 }
 
 .wrapper { /* Or your main content container */
-  flex-grow: 1; /* This makes the main content area take up all available space */
+    flex-grow: 1; /* This makes the main content area take up all available space */
 }
 
 .button-container{
@@ -86,7 +86,7 @@ body {
 }
 
 footer {
-  grid-row: 2 / 3; /* Explicitly place footer in the second row */
-  padding: 20px;
-  text-align: center;
+    grid-row: 2 / 3; /* Explicitly place footer in the second row */
+    padding: 20px;
+    text-align: center;
 }

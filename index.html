@@ -9,6 +9,9 @@
     <body>
         <div>
             <header>
+                <button class="navigation_bar">
+                    <a href="chandler.html">Chandler use only</a>
+                </button>
                 <h1>
                     Luc's Famous Phrases
                 </h1>
@@ -19,18 +22,14 @@
                 const audioPlayer = document.getElementById('audioPlayer');
                 audioPlayer.src = filePath;
                 audioPlayer.play();
-  }
+            }
         </script>
 
         <main>
             <div class="button-container">
                 <audio id="audioPlayer" controls style="display: none;"></audio>
 
-                <button 
-                    class="arcade-button" 
-                    onclick="playMP3('./sounds/Shlime.mp3')"
-                >Shlime
-                </button>
+                <button class="arcade-button" onclick="playMP3('./sounds/Shlime.mp3')">Shlime</button>
                 <button class="arcade-button" onclick="playMP3('./sounds/Girlypop.mp3')">Yas Girlypop</button>
                 <button class="arcade-button" onclick="playMP3('./sounds/Issue.mp3')">Issue Ish-me</button>
                 <button class="arcade-button" onclick="playMP3('./sounds/yur.mp3')">Yur</button>
@@ -54,6 +53,9 @@
                 <button class="arcade-button" onclick="playMP3('./sounds/slay.mp3')">Slay</button>
                 <button class="arcade-button" onclick="playMP3('./sounds/huh.mp3')">Huh?</button>
                 <button class="arcade-button" onclick="playMP3('./sounds/ate.mp3')">Ate</button>
+                <button class="arcade-button" onclick="playMP3('./sounds/')">Dropped it</button>
+                <button class="arcade-button" onclick="playMP3('./sounds/')">womp womp</button>
+                <button class="arcade-button" onclick="playMP3('./sounds/')">6 7</button>
             </div>
         </main>
     </body>
