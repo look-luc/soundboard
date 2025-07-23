@@ -26,10 +26,77 @@
             <div class="button-container">
                 <audio id="audioPlayer" controls style="display: none;"></audio>
 
-                <button class="arcade-button" onclick="playMP3('./sounds/moo.mp3')">Moo</button>
-                <button class="arcade-button" onclick="playMP3('./sounds/Peru.mp3')">Peruvian</button>
-                <button class="arcade-button" onclick="playMP3('./sounds/sweep.mp3')">Sweep</button>
+                <div class="button-group">
+                    <button class="arcade-button" onclick="playMP3('./sounds/moo.mp3')" data-sound="moo">Moo
+                    </button>
+                    <p class="message"></p>
+                </div>
+
+                <div class="button-group">
+                    <button class="arcade-button" onclick="playMP3('./sounds/Peru.mp3')" data-sound="peru">Peruvian
+                    </button>
+                    <p class="message"></p>
+                </div>
+                
+                <div class="button-group">
+                    <button class="arcade-button" onclick="playMP3('./sounds/sweep.mp3')" data-sound="sweep">Sweep
+                    </button>
+                    <p class="message"></p>
+                </div>
+                
             </div>
+
+            <script>
+                const maxClicksPerDay = 3
+
+                function getStorageKey(button) {
+                    return `buttonClicks_${button.dataset.sound}`;
+                }
+
+                function initializeButton(button, messageElement) {
+                    const today = new Date().toDateString();
+                    const storageKey = getStorageKey(button);
+                    let clickData = JSON.parse(localStorage.getItem(storageKey)) || {count: 0, date: ""};
+
+                    if (clickData.date !== today) {
+                        clickData = {count: 0, date: today}; // Reset count for a new day
+                    }
+
+                    if (clickData.count >= maxClicksPerDay) {
+                        button.disabled = true;
+                        messageElement.innerHTML = "'With Great Power comes Great Responsibility'<br>-probably someone at some point in the past";
+                    } else {
+                        button.disabled = false;
+                        messageElement.innerHTML = `This button's remaining presses:<br>${maxClicksPerDay - clickData.count}`;
+                    }
+                    localStorage.setItem(storageKey, JSON.stringify(clickData));
+                }
+
+                function handleButtonClick(button, messageElement) {
+                    const storageKey = getStorageKey(button);
+                    let clickData = JSON.parse(localStorage.getItem(storageKey));
+
+                    if (clickData.count < maxClicksPerDay) {
+                        clickData.count++;
+                        localStorage.setItem(storageKey, JSON.stringify(clickData));
+                        messageElement.innerHTML = `This button remaining presses:<br>${maxClicksPerDay - clickData.count}`;
+                        if (clickData.count >= maxClicksPerDay) {
+                            button.disabled = true;
+                            messageElement.innerHTML = "'With Great Power comes Great Responsibility'<br>-probably someone at some point in the past";
+                        }
+                    }
+                }
+                const arcadeButtons = document.querySelectorAll('.arcade-button');
+                const messageParagraphs = document.querySelectorAll('.message');
+
+                arcadeButtons.forEach((button, index) => {
+                    const messageElement = messageParagraphs[index];
+                    button.addEventListener('click', function() {
+                        handleButtonClick(button, messageElement);
+                    });
+                    initializeButton(button, messageElement);
+                });
+            </script>
         </main>
     </body>
     <footer>
